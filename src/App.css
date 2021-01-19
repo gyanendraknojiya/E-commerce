@@ -1,38 +1,60 @@
-.App {
+.slider{
+  height: 100%;
+  width: 80%;
+  float: right;
+  margin-right: 10%;
+  margin-top: 20px;
+}
+
+.Main-heading{
+  font-family: 'Titillium Web', sans-serif;
+  font-size:60px;
+  letter-spacing:2px;
+}
+
+.App{
+  /* background-image: linear-gradient(to bottom, #00000054, transparent); */
+}
+
+.cp{
+  cursor: pointer;
+}
+
+.footer{
+  background-color:#181818;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top:20px;
   text-align: center;
+  color:#cac9c9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  text-decoration: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.loader{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: white;
+  z-index:100;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fixedCenter{
+  position:fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff54;
+  z-index: 55;
 }

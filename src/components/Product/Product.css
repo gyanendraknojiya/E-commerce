@@ -1,0 +1,23 @@
+.ProductImage {
+  height: 400px;
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.tags {
+  margin: 5px auto;
+  font-size: 14px;
+  font-style: italic;
+  color: #ff0000d3;
+}
+
+.ProductPrice {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.ProductMrp {
+  text-decoration: line-through;
+}

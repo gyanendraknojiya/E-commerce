@@ -1,0 +1,73 @@
+.FeaturedProductsCard{
+  height: 350px;
+  width: 250px;
+  /* border: 1px solid black; */
+  box-shadow: 0px 0px 15px #646464;
+  border-radius: 10px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.FeaturedProductsCardImage{
+  height: 175px;
+  width:100%;
+  object-fit: contain;
+  margin: 5px auto;
+}
+
+.FeaturedProductsCardBottom{
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height: 10px;
+  background-color: red;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+
+.mrp{
+  text-decoration: line-through;
+  margin: auto 2px;
+}
+
+.price{
+  margin:auto 3px;
+  font-weight:bold;
+
+}
+
+.discount{
+  color: green;
+}
+
+.rate{
+  font-size: 14px;
+}
+.FeaturedProductsCardTitle{
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+  margin: 5px auto;
+  font-weight: 500;
+}
+
+@media(min-width:700px){
+  .FeaturedProductsCard{
+    width: 250px;
+  }
+}
+
+@media(max-width:700px ){
+  .FeaturedProductsCard{
+    width: 100%;
+  box-shadow: none;
+
+  }
+}
+
+@media(max-width:350px){
+  .FeaturedProductsCard{
+    width: 100%;
+  }
+}

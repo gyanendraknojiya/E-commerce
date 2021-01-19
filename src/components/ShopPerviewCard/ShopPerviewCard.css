@@ -1,0 +1,26 @@
+.card{
+  height: 300px;
+  max-width: 350px;
+  width: 100%;
+  /* padding: 10px; */
+  object-fit: cover;
+  margin: auto;
+  position: relative;
+  border: 1px solid black;
+}
+
+.card:hover{
+  transform: scale(1.05)
+}
+
+.card-title{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  background-color:#ffffffb2;
+  border: 0.1px solid black;
+  text-align: center;
+  font-size: 18px;
+  color: #414141;
+}
