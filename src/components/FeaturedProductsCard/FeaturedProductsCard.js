@@ -28,7 +28,7 @@ const FeaturedProductsCard = (props) => {
         </div>
 
         <div className="text-center mt-2">
-          <Link to="./product/hashhffgg"><span className="btn btn-sm btn-success px-3">
+          <Link to={`./product/${props.id}`}><span className="btn btn-sm btn-success px-3">
             <b>Buy Now</b>
           </span></Link>
         </div>

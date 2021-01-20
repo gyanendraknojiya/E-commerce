@@ -1,0 +1,21 @@
+.login-container{
+
+  width: 100vw;
+  height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.login{
+  max-width: 400px;
+  width: 100%;
+}
+
+.show-hide-password{
+  position:absolute;
+  top: 32px;
+  right: 6px;
+  color:#363636;
+  z-index:10;
+}

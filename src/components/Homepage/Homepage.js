@@ -17,7 +17,7 @@ const Homepage = () => {
     <div>
       {isLoading ? (
         <div className="loader">
-          <BeatLoader color={"#1ad1e0"} size={20} margin={10} />
+          <BeatLoader color={"#19456b"} size={20} margin={10} />
         </div>
       ) : (
         <div className="App">
