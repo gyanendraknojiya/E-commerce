@@ -45,10 +45,16 @@ function App() {
             {User ? (
               <div>
                 <AdminHeader />
+                <Route path="/admin/add-product/:collection">
+                  <AddProduct />
+                </Route>
                 <Route path="/admin/add-product">
                   <AddProduct />
                 </Route>
-                <Route path="/admin/all-products">
+                <Route path="/admin/all-products/:collection">
+                  <AllProducts />
+                </Route>
+                <Route path="/admin/all-products/">
                   <AllProducts />
                 </Route>
                 <Route exact path="/admin">

@@ -5,6 +5,7 @@ import ShopPerview from "../ShopPerview/ShopPerview";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
 
 import BeatLoader from "react-spinners/BeatLoader";
+import Slides from "../Slides/Slides";
 
 const Homepage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,8 +24,11 @@ const Homepage = () => {
         <div className="App">
           <Slider />
           <hr />
+          <Slides />
+          <hr />
           <ShopPerview />
           <hr />
+
           <FeaturedProducts />
         </div>
       )}
