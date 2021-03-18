@@ -21,14 +21,18 @@ const Admin = () => {
           </Link>
         </div>
         <div className="col-6 text-center">
-          <span className="my-5 btn btn-dark py-4 px-3 font-weight-bold home-btn">
-            Featured Products
-          </span>
+          <Link to="/admin/add-product/featured-products">
+            <span className="my-5 btn btn-dark py-4 px-3 font-weight-bold home-btn">
+              Featured Products
+            </span>
+          </Link>
         </div>
         <div className="col-6 text-center">
-          <span className="my-5 btn btn-danger py-4 px-5 font-weight-bold home-btn">
-            Hot deals
-          </span>
+          <Link to="/admin/add-product/hot-deals">
+            <span className="my-5 btn btn-danger py-4 px-5 font-weight-bold home-btn">
+              Hot deals
+            </span>
+          </Link>
         </div>
         <div className="col-6 text-center">
           <span className="my-5 btn btn-info py-4 px-5 font-weight-bold home-btn">

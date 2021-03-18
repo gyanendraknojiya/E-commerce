@@ -5,8 +5,10 @@
 }
 
 .home-btn{
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   height: 80px;
+  text-align: center;
   animation: 2s glow infinite;
 }
 

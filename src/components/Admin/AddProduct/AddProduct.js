@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Resizer from "react-image-file-resizer";
 import firebase from "firebase";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -9,6 +9,9 @@ const AddProduct = () => {
   const [imagePerview, setImagePerview] = useState(null);
   const [newProduct, setNewProduct] = useState({});
   const [isLoading, setIsloading] = useState(false);
+
+  const {collection} = useParams();
+  console.log(collection);
 
   const resizeFile = (file) =>
     new Promise((resolve) => {
@@ -53,7 +56,7 @@ const AddProduct = () => {
 
   const HandleFormSubmit = (e) => {
     e.preventDefault();
-console.log(newProduct)
+    console.log(newProduct);
     if (
       !newProduct.title ||
       !newProduct.details ||
@@ -102,7 +105,7 @@ console.log(newProduct)
             .add({
               ...newProduct,
               image: downloadURL,
-              created_at: new Date()
+              created_at: new Date(),
             })
             .then((doc) => {
               setIsloading(false);
