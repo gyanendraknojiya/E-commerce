@@ -10,7 +10,7 @@ const AddProduct = () => {
   const [newProduct, setNewProduct] = useState({});
   const [isLoading, setIsloading] = useState(false);
 
-  const {collection} = useParams();
+  const { collection } = useParams();
   console.log(collection);
 
   const resizeFile = (file) =>
@@ -67,7 +67,10 @@ const AddProduct = () => {
       swal("Error", "Please Enter all product details!", "error");
       return;
     }
-
+    if (collection) {
+      newProduct["collection"] = collection;
+      setNewProduct(newProduct);
+    }
     if (parseInt(newProduct.price) > parseInt(newProduct.MRP)) {
       swal("Error", "Selling price should be less than MRP!", "error");
       return;
@@ -110,6 +113,7 @@ const AddProduct = () => {
             .then((doc) => {
               setIsloading(false);
               swal("Success", "Product added successfully!", "success");
+              window.location.reload()
             })
             .catch((err) => {
               console.log(err);
@@ -122,104 +126,109 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="bg-light p-4">
-      {isLoading && (
-        <div className="fixedCenter">
-          <BeatLoader color={"#1ad1e0"} size={20} margin={10} />
-        </div>
-      )}
-      <div className="jumbotron text-center">
-        <span className="display-4">Add New Product</span>
-      </div>
-      <form onSubmit={HandleFormSubmit}>
-        <div className="form-group">
-          <label>Product Name:</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter product name..."
-            name="title"
-            onChange={HandleFormChanges}
-          ></input>
-        </div>
-        <div className="form-group">
-          <label>Product Image:</label>
-          <input
-            type="file"
-            className="form-control-file"
-            onChange={onChangeResize}
-          ></input>
-        </div>
-        {imagePerview && (
-          <div className="text-center ">
-            <img
-              src={URL.createObjectURL(imagePerview)}
-              alt="imagePerview"
-              height="300px"
-              width="300px"
-              className="border m-2"
-              style={{ objectFit: "contain" }}
-            />
+    <div className="text-white" style={{ backgroundColor: "#082032" }}>
+      <div className="container p-4">
+        {isLoading && (
+          <div className="fixedCenter">
+            <BeatLoader color={"#1ad1e0"} size={20} margin={10} />
           </div>
         )}
-        <div className="form-group">
-          <label>Product Details:</label>
-          <textarea
-            className="form-control"
-            placeholder="Enter product details..."
-            rows="3"
-            name="details"
-            onChange={HandleFormChanges}
-          ></textarea>
+        <div
+          className="jumbotron text-center"
+          style={{ backgroundColor: "#1C0C5B" }}
+        >
+          <span className="display-4">Add New Product</span>
         </div>
-        <div className="form-group">
-          <label>Product MRP:</label>
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Enter product MRP..."
-            name="MRP"
-            onChange={HandleFormChanges}
-          ></input>
-        </div>
-        <div className="form-group">
-          <label>Product Selling Price:</label>
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Enter product selling price..."
-            name="price"
-            onChange={HandleFormChanges}
-          ></input>
-        </div>
-        <div className="form-group">
-          <label>Product type:</label>
-          <select
-            className="form-control"
-            name="type"
-            onChange={HandleFormChanges}
-          >
-            <option>Select</option>
-            <option value="Gift">Gift</option>
-            <option value="Cosmetic">Cosmetic</option>
-            <option value="Garment">Garment</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div className="my-3 text-center">
-          <button
-            type="submit"
-            className="btn btn-primary px-2 font-weight-bold m-2"
-          >
-            Add
-          </button>
-          <Link to="/admin">
-            <button className="btn btn-danger px-2 font-weight-bold m-2">
-              Cancel
+        <form onSubmit={HandleFormSubmit}>
+          <div className="form-group">
+            <label>Product Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter product name..."
+              name="title"
+              onChange={HandleFormChanges}
+            ></input>
+          </div>
+          <div className="form-group">
+            <label>Product Image:</label>
+            <input
+              type="file"
+              className="form-control-file"
+              onChange={onChangeResize}
+            ></input>
+          </div>
+          {imagePerview && (
+            <div className="text-center ">
+              <img
+                src={URL.createObjectURL(imagePerview)}
+                alt="imagePerview"
+                height="300px"
+                width="300px"
+                className="border m-2"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          )}
+          <div className="form-group">
+            <label>Product Details:</label>
+            <textarea
+              className="form-control"
+              placeholder="Enter product details..."
+              rows="3"
+              name="details"
+              onChange={HandleFormChanges}
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <label>Product MRP:</label>
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Enter product MRP..."
+              name="MRP"
+              onChange={HandleFormChanges}
+            ></input>
+          </div>
+          <div className="form-group">
+            <label>Product Selling Price:</label>
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Enter product selling price..."
+              name="price"
+              onChange={HandleFormChanges}
+            ></input>
+          </div>
+          <div className="form-group">
+            <label>Product type:</label>
+            <select
+              className="form-control"
+              name="type"
+              onChange={HandleFormChanges}
+            >
+              <option>Select</option>
+              <option value="Gift">Gift</option>
+              <option value="Cosmetic">Cosmetic</option>
+              <option value="Garment">Garment</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div className="my-3 text-center">
+            <button
+              type="submit"
+              className="btn btn-primary px-2 font-weight-bold m-2"
+            >
+              Add
             </button>
-          </Link>
-        </div>
-      </form>
+            <Link to="/admin">
+              <button className="btn btn-danger px-2 font-weight-bold m-2">
+                Cancel
+              </button>
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

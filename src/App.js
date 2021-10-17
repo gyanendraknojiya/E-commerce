@@ -18,6 +18,7 @@ import firebase from "./firebase";
 import BeatLoader from "react-spinners/BeatLoader";
 import AdminHeader from "./components/Admin/AdminHeader/AdminHeader";
 import AllProducts from "./components/Admin/AllProducts/AllProducts";
+import ShopDetails from "./components/Admin/shopDetails/shopDetails";
 
 function App() {
   const [User, setUser] = useState(null);
@@ -45,10 +46,10 @@ function App() {
             {User ? (
               <div>
                 <AdminHeader />
-                <Route path="/admin/add-product/:collection">
+                <Route exact path="/admin/add-product/:collection">
                   <AddProduct />
                 </Route>
-                <Route path="/admin/add-product">
+                <Route exact path="/admin/add-product">
                   <AddProduct />
                 </Route>
                 <Route path="/admin/all-products/:collection">
@@ -56,6 +57,9 @@ function App() {
                 </Route>
                 <Route path="/admin/all-products/">
                   <AllProducts />
+                </Route>
+                <Route path="/admin/edit-details">
+                  <ShopDetails />
                 </Route>
                 <Route exact path="/admin">
                   <Admin />

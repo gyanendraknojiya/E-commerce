@@ -6,7 +6,7 @@ import firebase from "firebase";
 
 const AdminHeader = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark navbar-dark ">
+    <nav className="navbar navbar-expand-lg bg-dark navbar-dark" style={{height:55}} >
       <Link className="navbar-brand" to="/admin">
         <img src={logo} alt="Logo" height="25px" width="25px" />
       </Link>

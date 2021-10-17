@@ -1,21 +1,21 @@
-.login-container{
-
+.login-container {
   width: 100vw;
   height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1d25;
 }
 
-.login{
+.login {
   max-width: 400px;
   width: 100%;
 }
 
-.show-hide-password{
-  position:absolute;
+.show-hide-password {
+  position: absolute;
   top: 32px;
   right: 6px;
-  color:#363636;
-  z-index:10;
+  color: #363636;
+  z-index: 10;
 }
